@@ -551,6 +551,32 @@
                   font-weight: bold;
                   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
             }
+
+            /* --- Ganesh Logo Style --- */
+            .ganesh-logo {
+                  width: 140px;
+                  /* फोटोची साईज */
+                  margin-bottom: 15px;
+                  /* सोन्याचा ग्लो (Gold Glow Effect) */
+                  filter: drop-shadow(0 0 15px rgba(244, 162, 97, 0.8));
+                  animation: float 3s ease-in-out infinite;
+                  /* हळू वर-खाली हालण्यासाठी */
+            }
+
+            /* तरंगण्याचे ॲनिमेशन (Floating Effect) */
+            @keyframes float {
+                  0% {
+                        transform: translateY(0px);
+                  }
+
+                  50% {
+                        transform: translateY(-10px);
+                  }
+
+                  100% {
+                        transform: translateY(0px);
+                  }
+            }
       </style>
 </head>
 
@@ -559,10 +585,10 @@
       <!-- Welcome Screen (To start music) -->
       <div id="welcome-screen">
             <div class="welcome-content">
-                  <img src="https://freepngimg.com/thumb/lord_ganesha/4-2-lord-ganesha-transparent-png-thumb.png" alt="Shree Ganesha"
-                        style="width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 5px gold);">
+                  <img src="./images/blackbb (1).jpeg" alt="Shree Ganesha"
+                        style="width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 5px gold); border-radius: 50%;">
                   <p>॥ श्री गणेशाय नमः ॥</p>
-                  <h1>अश्विनी <span>&</span> पंकज</h1>
+                  <h1>अश्विनी <span><img style="width: 7%;" src="./images/wedding.png" alt=""></span> पंकज</h1>
                   <p>यांच्या लग्नाला आपले सहर्ष स्वागत आहे!</p>
                   <button class="enter-btn" onclick="startWedding()">💌 निमंत्रण पत्रिका उघडा</button>
             </div>
@@ -578,10 +604,12 @@
       <!-- Header / Hero Section -->
       <header id="home">
             <div class="hero-content">
-                  <p class="shloka">॥ श्री गणेशाय नमः ॥</p>
+                  <img src="./images/gold2-removebg-preview.png"
+                        alt="Shree Ganesha" style="width: 200px; margin-bottom: 10px; filter: drop-shadow(0 0 10px rgba(244, 162, 97, 0.8)); animation: float 3s ease-in-out infinite;">
+                  <p class="shloka" style="margin-bottom: 20%;">॥ श्री गणेशाय नमः ॥</p>
                   <h2 class="reveal">आमच्या लग्नाला यायचं हं!</h2>
-                  <h1 class="reveal">अश्विनी <span
-                              style="font-size: 0.6em; font-family: 'Poppins', sans-serif;">&</span> पंकज</h1>
+                  <h1 class="reveal">Ashwini <span
+                              style="font-size: 0.6em; font-family: 'Poppins', sans-serif;"> &nbsp<img  style="width:9%;" src="./images/wedding.png" alt=""></span>&nbsp Pankaj</h1>
                   <p class="reveal" style="font-size: 1.4rem; margin-top: 10px; font-weight: bold;">०५ फेब्रुवारी २०२६
                   </p>
                   <p class="reveal" style="font-size: 1rem; margin-top: 5px;">॥ शुभ मंगल विवाह ॥</p>
@@ -693,7 +721,7 @@
                               <i class="fas fa-heart" style="color: var(--primary-color);"></i>
                         </div>
                         <div class="event-details">
-                              <h3>💍 विवाह सोहळा</h3>
+                              <h3>💕विवाह सोहळा</h3>
                               <div class="event-info">
                                     <p><strong>तारीख:</strong> ५ फेब्रुवारी २०२६, गुरुवार</p>
                                     <p><strong>वेळ:</strong> दुपारी १२:३० वाजता</p>
