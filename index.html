@@ -820,70 +820,28 @@
             }
             reveal();
 
-      //       // --- 4. Music Toggle ---
-      //       var music = document.getElementById("wedding-music");
-      //       var icon = document.getElementById("music-icon");
-      //       function toggleMusic() {
-      //             if (music.paused) {
-      //                   music.play();
-      //                   icon.classList.remove("fa-play");
-      //                   icon.classList.add("fa-pause");
-      //             } else {
-      //                   music.pause();
-      //                   icon.classList.remove("fa-pause");
-      //                   icon.classList.add("fa-play");
-      //             }
-      //       }
-      //      // 🔴 Stop music completely
-      //       function stopMusic() {
-      //             music.pause();
-      //             music.currentTime = 0; // optional: restart from beginning
-      //             icon.classList.remove("fa-pause");
-      //             icon.classList.add("fa-play");
-      //       }
+            // --- 4. Music Toggle ---
             var music = document.getElementById("wedding-music");
-                  var icon = document.getElementById("music-icon");
-                  var musicWasStoppedByMap = false;
-
-                  function toggleMusic() {
-                        if (music.paused) {
-                              music.play();
-                              icon.classList.remove("fa-play");
-                              icon.classList.add("fa-pause");
-                        } else {
-                              music.pause();
-                              icon.classList.remove("fa-pause");
-                              icon.classList.add("fa-play");
-                        }
-                  }
-
-                  function stopMusic() {
+            var icon = document.getElementById("music-icon");
+            function toggleMusic() {
+                  if (music.paused) {
+                        music.play();
+                        icon.classList.remove("fa-play");
+                        icon.classList.add("fa-pause");
+                  } else {
                         music.pause();
-                        musicWasStoppedByMap = true;
                         icon.classList.remove("fa-pause");
                         icon.classList.add("fa-play");
                   }
-      // When user comes back to the tab
-      window.addEventListener("focus", function () {
-            if (musicWasStoppedByMap) {
-                  music.play().catch(() => { });
-                  icon.classList.remove("fa-play");
-                  icon.classList.add("fa-pause");
-                  musicWasStoppedByMap = false;
             }
-      });
-
-      // Handles mobile back navigation (Chrome, Android, iOS)
-      window.addEventListener("pageshow", function () {
-            if (musicWasStoppedByMap) {
-                  music.play().catch(() => { });
-                  icon.classList.remove("fa-play");
-                  icon.classList.add("fa-pause");
-                  musicWasStoppedByMap = false;
+           // 🔴 Stop music completely
+            function stopMusic() {
+                  music.pause();
+                  music.currentTime = 0; // optional: restart from beginning
+                  icon.classList.remove("fa-pause");
+                  icon.classList.add("fa-play");
             }
-      });
-
-
+            
             // --- 5. Random Petal Animation ---
             function createPetal() {
                   const petal = document.createElement('div');
