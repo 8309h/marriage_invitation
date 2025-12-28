@@ -841,6 +841,15 @@
                   icon.classList.remove("fa-pause");
                   icon.classList.add("fa-play");
             }
+            document.addEventListener("visibilitychange", function () {
+                        if (!document.hidden) {
+                              // User returned to invitation page
+                              music.play().catch(() => { });
+                              icon.classList.remove("fa-play");
+                              icon.classList.add("fa-pause");
+                        }
+                  });
+
             // --- 5. Random Petal Animation ---
             function createPetal() {
                   const petal = document.createElement('div');
