@@ -585,8 +585,8 @@
       <!-- Welcome Screen (To start music) -->
       <div id="welcome-screen">
             <div class="welcome-content">
-                  <img src="./images/blackbb (1).jpeg" alt="Shree Ganesha"
-                        style="width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 5px gold); border-radius: 50%;">
+                  <img src="./images/blackbb__1_-removebg-preview.png" alt="Shree Ganesha"
+                        style="width: 150px; filter: drop-shadow(0 0 5px gold);">
                   <p>॥ श्री गणेशाय नमः ॥</p>
                   <h1>अश्विनी <span><img style="width: 7%;" src="./images/wedding.png" alt=""></span> पंकज</h1>
                   <p>यांच्या लग्नाला आपले सहर्ष स्वागत आहे!</p>
@@ -598,7 +598,7 @@
             <i id="music-icon" class="fas fa-pause"></i> <!-- Initially playing icon -->
       </div>
       <audio id="wedding-music" loop>
-            <source src="./images/sam-wedding-music-5-258972.mp3" type="audio/mpeg">
+            <source src="./images/Aaj Sajeya-(SambalpuriStar.In).mp3" type="audio/mpeg">
       </audio>
 
       <!-- Header / Hero Section -->
@@ -833,17 +833,17 @@
                   petal.classList.add('petal');
 
                   // Randomly choose between Flower and Heart
-                  const shapes = ['🌸', '❤️', '🏵️'];
+                  const shapes = ['🌸', '❤️', '🏵️','🌹','🌺','💕'];
                   petal.innerText = shapes[Math.floor(Math.random() * shapes.length)];
 
                   petal.style.left = Math.random() * 100 + 'vw';
                   petal.style.animationDuration = Math.random() * 3 + 4 + 's';
-                  petal.style.fontSize = Math.random() * 15 + 10 + 'px';
+                  petal.style.fontSize = Math.random() * 20 + 15 + 'px';
 
                   document.body.appendChild(petal);
                   setTimeout(() => { petal.remove(); }, 7000);
             }
-            setInterval(createPetal, 300);
+            setInterval(createPetal, 100);
       </script>
 </body>
 
