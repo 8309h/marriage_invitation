@@ -713,7 +713,7 @@
                                     <p>
                                           <strong>स्थळ:</strong> वधूचे निवासस्थानी (चिंचोली पिंप्री)
                                           <a href="https://www.google.com/maps/search/?api=1&query=Wagh+General+Store+Chincholi+Pimpri+Jamner+Jalgaon+424209"
-                                                target="_blank" title="Google Map वर पहा"
+                                                target="_blank"  onclick="stopMusic()" title="Google Map वर पहा"
                                                 style="display: inline-block; margin-left: 10px; background-color: #FFF9F5; color: green; padding: 5px 10px; border-radius: 50%; text-decoration: none; font-size: 0.9rem; vertical-align: middle;animation: float 3s ease-in-out infinite;">
                                                 <i class="fas fa-map-marker-alt"></i>
                                           </a>
@@ -758,7 +758,7 @@
 
                   <div style="margin-top: 30px; text-align: center;">
                         <a href="https://www.google.com/maps/search/?api=1&query=Muktai+Mangal+Karyalay+Bodwad+Nadgaon+Road"
-                              target="_blank"
+                              target="_blank" onclick="stopMusic()"
                               style="text-decoration: none; background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px;">
                               <i class="fas fa-location-arrow"></i> लोकेशन बघा
                         </a>
@@ -834,7 +834,13 @@
                         icon.classList.add("fa-play");
                   }
             }
-
+           // 🔴 Stop music completely
+            function stopMusic() {
+                  music.pause();
+                  music.currentTime = 0; // optional: restart from beginning
+                  icon.classList.remove("fa-pause");
+                  icon.classList.add("fa-play");
+            }
             // --- 5. Random Petal Animation ---
             function createPetal() {
                   const petal = document.createElement('div');
