@@ -18,8 +18,10 @@
   --f-script:'Great Vibes',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--f-mr);background:var(--cream);color:var(--text);overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{font-family:var(--f-mr);background:var(--cream);color:var(--text);overflow-x:hidden;max-width:100%;position:relative}
+#fx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:9997}
+section,header,footer{max-width:100%;overflow-x:clip}
 body.locked{overflow:hidden;height:100vh;height:100svh}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -55,7 +57,7 @@ section{position:relative}
 .door.l{left:0;transform-origin:left}
 .door.r{right:0;transform-origin:right}
 .door .bg{position:absolute;top:0;width:100vw;height:100%;
-  background:url('./images/pranali_aditya_couple.jpg') center 35%/cover no-repeat;filter:blur(7px) brightness(.55);transform:scale(1.08)}
+  background:url('./images/pranali_aditya_couple_b.jpg') center 35%/cover no-repeat;filter:blur(7px) brightness(.55);transform:scale(1.08)}
 .door.l .bg{left:0}
 .door.r .bg{right:0}
 .door::after{content:"";position:absolute;inset:0;
@@ -85,8 +87,8 @@ section{position:relative}
 
 /* ================= HERO ================= */
 header{height:100vh;height:100svh;min-height:560px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:90px;justify-content:center;text-align:center;color:#fff}
-.hero-bg{position:absolute;inset:-4%;background:url('./images/pranali_aditya_couple.jpg') center 42%/cover no-repeat;animation:kenburns 22s ease-in-out infinite alternate}
-@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12) translate(-1%,-2%)}}
+.hero-bg{position:absolute;inset:0;transform-origin:42% 35%;background:url('./images/pranali_aditya_couple_b.jpg') center 42%/cover no-repeat;animation:kenburns 22s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1)}}
 header::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(30,2,8,.35) 0%,rgba(30,2,8,.15) 35%,rgba(30,2,8,.65) 70%,rgba(30,2,8,.9) 100%)}
 .hero-content{position:relative;z-index:2;padding:0 16px}
@@ -164,7 +166,7 @@ header::after{content:"";position:absolute;inset:0;background:
 #venue{padding:90px 0;background:linear-gradient(180deg,#fff,var(--rose))}
 .venue-card{max-width:820px;margin:0 auto;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 25px 60px rgba(122,15,31,.15);border:1px solid rgba(212,162,76,.45)}
 .venue-top{position:relative;height:300px;background:
-  linear-gradient(135deg,rgba(74,6,18,.85),rgba(122,15,31,.6)),url('./images/pranali_aditya_couple.jpg') center 60%/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+  linear-gradient(135deg,rgba(74,6,18,.85),rgba(122,15,31,.6)),url('./images/pranali_aditya_couple_b.jpg') center 60%/cover;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
 .venue-top iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .pin{width:70px;height:70px;margin:0 auto 14px;animation:drop 1.8s ease-in-out infinite}
 @keyframes drop{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -193,15 +195,15 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
 .music.paused::after{content:"";position:absolute;width:38px;height:2px;background:#fff;transform:rotate(-45deg)}
 
 /* ================= PETALS & SPARKLES ================= */
-.petal{position:fixed;top:-40px;z-index:9997;pointer-events:none;user-select:none;will-change:transform}
+.petal{position:absolute;top:-40px;pointer-events:none;user-select:none;will-change:transform}
 .petal.leaf{width:14px;height:18px;border-radius:15px 0 15px 0;background:linear-gradient(135deg,#ff8fa3,#e63950)}
 .petal.leaf.y{background:linear-gradient(135deg,#ffd27a,#f39c12)}
 @keyframes fall{0%{transform:translate(0,0) rotate(0)}25%{transform:translate(30px,25vh) rotate(90deg)}50%{transform:translate(-20px,52vh) rotate(180deg)}
   75%{transform:translate(35px,78vh) rotate(270deg)}100%{transform:translate(0,110vh) rotate(360deg);opacity:.2}}
-.spark{position:fixed;width:8px;height:8px;pointer-events:none;z-index:9999;border-radius:50%;
+.spark{position:absolute;width:8px;height:8px;pointer-events:none;z-index:9999;border-radius:50%;
   background:radial-gradient(circle,#fff,var(--gold-l) 40%,transparent 70%);animation:spark .8s ease-out forwards}
 @keyframes spark{to{transform:translateY(20px) scale(0);opacity:0}}
-.burst{position:fixed;z-index:10002;pointer-events:none;font-size:22px}
+.burst{position:absolute;pointer-events:none;font-size:22px}
 
 /* ================= RESPONSIVE ================= */
 /* Tablets & small laptops (≤ 992px) */
@@ -221,6 +223,8 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
   .ornament::before,.ornament::after{width:56px}
 
   header{align-items:flex-end;padding-bottom:88px}
+  .hero-bg{background-position:30% 30%;transform-origin:35% 35%}
+  .door .bg{background-position:30% 35%}
   .hero-content .ganesh{width:70px}
   .hero-content .shloka{margin-bottom:10px;font-size:.95rem}
   .hero-names{font-size:clamp(2.2rem,11vw,3.4rem)}
@@ -316,6 +320,7 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
 <body class="locked">
 
 <div id="progress"></div>
+<div id="fx"></div>
 
 <!-- ================= WELCOME (doors) ================= -->
 <div id="welcome">
@@ -411,14 +416,14 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
     <h2 class="sec-title reveal">विवाह कार्यक्रम</h2>
     <div class="ornament"><span>✦</span></div>
     <div class="timeline">
-      <!-- <div class="ev reveal right">
+      <div class="ev reveal right">
         <span class="icon">💍</span>
         <h3>साखरपुडा</h3>
         <div class="row"><b>तारीख</b> शनिवार, २६ डिसेंबर २०२६</div>
         <div class="row"><b>वेळ</b> सायंकाळी ६:०० वा.</div>
         <div class="row"><b>स्थळ</b> विवाहस्थळी (सोनाई लॉन्स)</div>
         <a class="btn btn-ghost cal" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%A4%B8%E0%A4%BE%E0%A4%96%E0%A4%B0%E0%A4%AA%E0%A5%81%E0%A4%A1%E0%A4%BE%20-%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A3%E0%A4%BE%E0%A4%B2%E0%A5%80%20%26%20%E0%A4%86%E0%A4%A6%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF&dates=20261226T180000/20261226T210000&ctz=Asia/Kolkata&location=Sonai%20Lawns%2C%20Hadapsar%20Saswad%20Road%2C%20Pune">📅 कॅलेंडरमध्ये जोडा</a>
-      </div> -->
+      </div>
       <div class="ev reveal right">
         <span class="icon">🌼</span>
         <h3>हळदी समारंभ</h3>
@@ -484,7 +489,7 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
 <script>
 (function(){
   const body=document.body, music=document.getElementById('music'), mBtn=document.getElementById('musicBtn');
-  const welcome=document.getElementById('welcome');
+  const welcome=document.getElementById('welcome'), fx=document.getElementById('fx');
 
   /* ---------- music ---------- */
   function setMusicUI(on){mBtn.classList.toggle('playing',on);mBtn.classList.toggle('paused',!on);}
@@ -533,10 +538,10 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
     if(r<0.45){ p.className='petal leaf'+(Math.random()<.35?' y':''); const sc=.7+Math.random()*.8; p.style.width=14*sc+'px'; p.style.height=18*sc+'px'; }
     else { p.className='petal'; p.textContent=shapes[Math.floor(Math.random()*shapes.length)]; p.style.fontSize=(14+Math.random()*16)+'px'; }
     const dur=6+Math.random()*6;
-    p.style.left=Math.random()*100+'vw';
+    p.style.left=(Math.random()*96)+'%';
     p.style.animation=`fall ${dur}s linear forwards`;
     p.style.opacity=.75+Math.random()*.25;
-    body.appendChild(p);
+    fx.appendChild(p);
     setTimeout(()=>p.remove(),dur*1000);
   }
   function startPetals(){ if(!petalTimer) petalTimer=setInterval(petal,260); }
@@ -547,7 +552,7 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
     for(let i=0;i<n;i++){
       const b=document.createElement('div');b.className='burst';
       b.textContent=shapes[i%shapes.length];
-      b.style.left=x+'px';b.style.top=y+'px';body.appendChild(b);
+      b.style.left=x+'px';b.style.top=y+'px';fx.appendChild(b);
       const a=Math.random()*Math.PI*2, d=120+Math.random()*Math.max(innerWidth,innerHeight)*.45;
       b.animate([{transform:'translate(-50%,-50%) scale(.3)',opacity:1},
                  {transform:`translate(calc(-50% + ${Math.cos(a)*d}px), calc(-50% + ${Math.sin(a)*d}px)) rotate(${Math.random()*540}deg) scale(1.2)`,opacity:0}],
@@ -563,7 +568,7 @@ footer .credit{font-size:.8rem;opacity:.6;margin-top:28px}
     let last=0;
     addEventListener('mousemove',e=>{const now=performance.now();if(now-last<40)return;last=now;
       const s=document.createElement('div');s.className='spark';s.style.left=e.clientX-4+'px';s.style.top=e.clientY-4+'px';
-      body.appendChild(s);setTimeout(()=>s.remove(),800);});
+      fx.appendChild(s);setTimeout(()=>s.remove(),800);});
   }
 
   /* ---------- live Google map (when opened directly, not inside a frame) ---------- */
